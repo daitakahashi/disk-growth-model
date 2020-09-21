@@ -35,8 +35,8 @@ distributeInitialPopulation <- function(h, density=1e-6, N=NA, dx=1) {
 
 source('pinkNoise.R')
 
-genHabitatMap <- function(hresolution, beta, pow, scale=1) {
-    h <- pinkNoise(hresolution, beta=beta, scale=scale)
+genHabitatMap <- function(hresolution, beta, pow) {
+    h <- pinkNoise(hresolution, beta=beta)
     h <- ((h - min(h))/(max(h) - min(h)))^pow
     h <- h/sum(h)
     return(h)
